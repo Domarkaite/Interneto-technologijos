@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kino festivalis</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="main-header">
+        <h1>Kino festivalis 2024</h1>
+        <p class="highlight">Festivalio vieta: Lietuva</p>
+        <p>Data: 2024-12-11 – 2024-12-22</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#movies">Filmai</a></li>
+            <li><a href="#awards">Apdovanojimai</a></li>
+            <li><a href="#form">Kontaktų forma</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="movies">
+            <h2>Festivalio filmai</h2>
+            <article>
+                <h3>Irklais per Atlantą</h3>
+                <p>Režisierius: Aurimas Valujavičius</p>
+                <img src="irklais.jpg" alt="Irklais per Atlantą" width="200">
+                <p>Filmo trukmė: 100 min</p>
+                <p>Premjera: Ne</p>
+                <p><a href="https://www.imdb.com/title/tt30624233/">Daugiau apie filmą: IMDb</a></p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Laikas</th>
+                            <th>Vieta</th>
+                            <th>Kaina (€)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024-12-12</td>
+                            <td>18:00</td>
+                            <td>Forum Cinemas</td>
+                            <td rowspan="2">9.99</td>
+                        </tr>
+                        <tr>
+                            <td>2024-12-13</td>
+                            <td>20:00</td>
+                            <td>Skalvijos kino centras</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Bilietų rezervacija būtina</td>
+                            <td>Nemokama</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <article>
+                <h3>Gladiatorius II</h3>
+                <p>Režisierius: Ridley Scott</p>
+                <img src="gladiatorius.jpg" alt="Gladiatorius II" width="200">
+                <p>Filmo trukmė: 141 min</p>
+                <p>Premjera: Taip</p>
+                <p><a href="https://www.imdb.com/title/tt9218128/">Daugiau apie filmą: IMDb</a></p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Laikas</th>
+                            <th>Vieta</th>
+                            <th>Kaina (€)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024-12-22</td>
+                            <td>19:00</td>
+                            <td>Vingis Cinema</td>
+                            <td>20.50</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+
+        <section id="awards">
+            <h2>Apdovanojimai</h2>
+            <ol>
+                <li>Geriausias režisierius: Gladiatorius II</li>
+                <li>Geriausias dokumentinis filmas: Irklais per Atlantą</li>
+                <li>Publikos pasirinkimas: Anatomy of a Fall</li>
+            </ol>
+        </section>
+
+        <section id="form">
+            <h2>Kontaktinė forma</h2>
+            <form action="#" method="post">
+                <label for="name">Vardas:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">El. paštas:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Telefonas:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="message">Žinutė:</label>
+                <textarea id="message" name="message" required placeholder="Įveskite savo žinutę"></textarea>
+
+                <label for="contact-method">Pageidaujamas kontaktavimo būdas:</label>
+                <select id="contact-method" name="contact-method" required>
+                    <option value="" disabled selected>Pasirinkite kontaktavimo būdą</option>
+                    <option value="email">El. paštas</option>
+                    <option value="phone">Telefonas</option>
+                </select>
+                
+                <button type="submit">Siųsti</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Kino festivalis. Visos teisės saugomos.</p>
+        <p id="footer-note">Papildoma informacija apie festivalį jau netrukus!</p>
+    </footer>
+</body>
+</html>

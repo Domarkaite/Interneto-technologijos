@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<festival xmlns="http://www.festival.com/festival">
+    <name>Kino festivalis</name>
+    <location>Lithuania</location>
+    <dates>
+        <start>2024-12-11</start>
+        <end>2024-12-22</end>
+    </dates>
+    <movies>
+        <movie id="001" language="Lithuanian" premiere="false">
+            <title>Irklais per Atlantą</title>
+            <director age="30">Aurimas Valujavičius</director>
+            <duration>100</duration>
+            <screenings>
+                <screening>
+                    <date>2024-12-12</date>
+                    <time>18:00:00</time>
+                    <venue>Forum Cinemas</venue>
+                    <price>9.99</price>
+                </screening>
+                <screening>
+                    <date>2024-12-13</date>
+                    <time>20:00:00</time>
+                    <venue>Skalvijos kino centras</venue>
+                    <price>12.50</price>
+                </screening>
+            </screenings>
+        </movie>
+        <movie id="002" language="English" premiere="true">
+            <title>Gladiatorius II</title>
+            <director age="86">Ridley Scott</director>
+            <duration>141</duration>
+            <screenings>
+                <screening>
+                    <date>2024-12-22</date>
+                    <time>19:00:00</time>
+                    <venue>Vingis Cinema</venue>
+                    <price>20.50</price>
+                </screening>
+            </screenings>
+        </movie>
+        <movie id="003" language="English" premiere="false">
+            <title>Anatomy of a Fall</title>
+            <director age="46">Justine Triet</director>
+            <duration>151</duration>
+            <screenings>
+                <screening>
+                    <date>2024-12-15</date>
+                    <time>17:00:00</time>
+                    <venue>Forum Cinemas</venue>
+                    <price>15.00</price>
+                </screening>
+                <screening>
+                    <date>2024-12-16</date>
+                    <time>19:30:00</time>
+                    <venue>Pasaka Cinema</venue>
+                    <price>14.00</price>
+                </screening>
+            </screenings>
+        </movie>
+    </movies>
+    <awards>
+        <award>
+            <category>Best Director</category>
+            <winner>002</winner>
+        </award>
+        <award>
+            <category>Best Documentary</category>
+            <winner>001</winner>
+        </award>
+        <award>
+            <category>Audience Choice</category>
+            <winner>003</winner>
+        </award>
+    </awards>
+</festival>

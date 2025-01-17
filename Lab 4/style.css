@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.board {
+    display: grid; /* Requirement 4.b: Dynamic grid layout for board */
+    grid-template-columns: repeat(9, 1fr);
+    width: 300px;
+    gap: 2px;
+    align-items: center;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #ddd;
+}
+
+.cell[readonly] {
+    background-color: #f0f0f0; /* Styling for fixed cells */
+}
+
+.hidden {
+    display: none; /* Requirement 2: Hide messages */
+}
+
+.error {
+    color: red; /* Requirement 2: Error styling */
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn button {
+    user-select: none;
+    height: 30px;
+    width: 120px;
+    background-color: black;
+    color: white;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn button:hover {
+    background-color: #444; /* Requirement 3.b: Button hover effect */
+}

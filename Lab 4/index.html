@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Requirement 2: Include jQuery library for dynamic behavior and error message display -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Sudoku</h1>
+    <div id="message" class="error hidden"></div> <!-- Requirement 2: Display errors using display:none initially -->
+    <div class="board" id="sudoku-board"></div> <!-- Requirement 3.b: Dynamic board rendering -->
+
+    <!-- Buttons for reset, checking solution, and showing answer -->
+    <div class="btn">
+        <button id="reset-board">Nuresetinti</button> <!-- Requirement 3: Resets the board -->
+        <button id="check-solution">Pateikti</button> <!-- Requirement 1: Validates user solution -->
+        <button id="show-correct-answer">Sprendimas</button> <!-- Requirement 4.b: Displays the correct answer -->
+    </div>
+
+    <script src="script.js"></script> <!-- JavaScript functionality -->
+</body>
+</html>

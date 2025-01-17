@@ -1,0 +1,84 @@
+<festival xmlns="http://www.festival.com/festival" xmlns:mov="http://www.festival.com/festival/movies">
+    <name>Kino festivalis</name>
+    <location>Lithuania</location>
+    <dates>
+        <start>2024-12-11</start>
+        <end>2024-12-22</end>
+    </dates>
+    <movies>
+        <mov:movie id="001" language="Lithuanian" premiere="False">
+            <mov:title>Irklais per Atlantą</mov:title>
+            <mov:director>
+                <mov:name>Aurimas Valujavičius</mov:name>
+                <mov:age>30</mov:age>
+            </mov:director>
+            <mov:duration>100</mov:duration>
+            <mov:screenings>
+                <mov:screening>
+                    <mov:date>2024-12-12</mov:date>
+                    <mov:time>18:00</mov:time>
+                    <mov:venue>Forum Cinemas</mov:venue>
+                    <mov:price>9.99</mov:price>
+                </mov:screening>
+                <mov:screening>
+                    <mov:date>2024-12-13</mov:date>
+                    <mov:time>20:00</mov:time>
+                    <mov:venue>Skalvijos kino centras</mov:venue>
+                    <mov:price>12.50</mov:price>
+                </mov:screening>
+            </mov:screenings>
+        </mov:movie>
+        <mov:movie id="002" language="English" premiere="True">
+            <mov:title>Gladiatorius II</mov:title>
+            <mov:director>
+                <mov:name>Ridley Scott</mov:name>
+                <mov:age>86</mov:age>
+            </mov:director>
+            <mov:duration>141</mov:duration>
+            <mov:screenings>
+                <mov:screening>
+                    <mov:date>2024-12-22</mov:date>
+                    <mov:time>19:00</mov:time>
+                    <mov:venue>Vingis Cinema</mov:venue>
+                    <mov:price>20.50</mov:price>
+                </mov:screening>
+            </mov:screenings>
+        </mov:movie>
+        <mov:movie id="003" language="English" premiere="False">
+            <mov:title>Anatomy of a Fall</mov:title>
+            <mov:director>
+                <mov:name>Justine Triet</mov:name>
+                <mov:age>46</mov:age>
+            </mov:director>
+            <mov:duration>151</mov:duration>
+            <mov:screenings>
+                <mov:screening>
+                    <mov:date>2024-12-15</mov:date>
+                    <mov:time>17:00</mov:time>
+                    <mov:venue>Forum Cinemas</mov:venue>
+                    <mov:price>15.00</mov:price>
+                </mov:screening>
+                <mov:screening>
+                    <mov:date>2024-12-16</mov:date>
+                    <mov:time>19:30</mov:time>
+                    <mov:venue>Pasaka Cinema</mov:venue>
+                    <mov:price>14.00</mov:price>
+                </mov:screening>
+            </mov:screenings>
+        </mov:movie>
+    </movies>
+    <awards>
+        <award>
+            <category>Best Director</category>
+            <winner>Justine Triet</winner>
+        </award>
+        <award>
+            <category>Best Documentary</category>
+            <winner>Irklais per Atlantą</winner>
+        </award>
+        <award>
+            <category>Audience Choice</category>
+            <winner>Le Voyageur</winner>
+        </award>
+    </awards>
+</festival>

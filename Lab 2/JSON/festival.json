@@ -1,0 +1,95 @@
+{
+  "festival": {
+      "name": "Kino festivalis",
+      "location": "Lithuania",
+      "dates": {
+          "start": "2024-12-11",
+          "end": "2024-12-22"
+      },
+      "movies": [
+          {
+              "id": "001",
+              "language": "Lithuanian",
+              "premiere": false,
+              "title": "Irklais per Atlantą",
+              "director": {
+                  "name": "Aurimas Valujavičius",
+                  "age": 30
+              },
+              "duration": 100,
+              "screenings": [
+                  {
+                      "date": "2024-12-12",
+                      "time": "18:00:00",
+                      "venue": "Forum Cinemas",
+                      "price": 10
+                  },
+                  {
+                      "date": "2024-12-13",
+                      "time": "20:00:00",
+                      "venue": "Skalvijos kino centras",
+                      "price": 12.50
+                  }
+              ]
+          },
+          {
+              "id": "002",
+              "language": "English",
+              "premiere": true,
+              "title": "Gladiatorius II",
+              "director": {
+                  "name": "Ridley Scott",
+                  "age": 86
+              },
+              "duration": 140,
+              "screenings": [
+                  {
+                      "date": "2024-12-22",
+                      "time": "19:00:00",
+                      "venue": "Vingis Cinema",
+                      "price": 20.50
+                  }
+              ]
+          },
+          {
+              "id": "003",
+              "language": "English",
+              "premiere": false,
+              "title": "Anatomy of a Fall",
+              "director": {
+                  "name": "Justine Triet",
+                  "age": 46
+              },
+              "duration": 150,
+              "screenings": [
+                  {
+                      "date": "2024-12-15",
+                      "time": "17:00:00",
+                      "venue": "Forum Cinemas",
+                      "price": 15.00
+                  },
+                  {
+                      "date": "2024-12-16",
+                      "time": "19:30:00",
+                      "venue": "Pasaka Cinema",
+                      "price": 14.00
+                  }
+              ]
+          }
+      ],
+      "awards": [
+          {
+              "category": "Best Director",
+              "winner": "002"
+          },
+          {
+              "category": "Best Documentary",
+              "winner": "001"
+          },
+          {
+              "category": "Audience Choice",
+              "winner": "003"
+          }
+      ]
+  }
+}

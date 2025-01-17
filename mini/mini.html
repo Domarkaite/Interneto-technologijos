@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eglute</title>
+    <style>
+        .centered-text {
+            text-align: center;
+            white-space: pre;
+            font-family: monospace; 
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return starts(event)">
+        <label for="stars">No of start levels: </label>
+        <input type="number" name="stars" id="stars" required>
+        <button type="submit">Generate</button>
+    </form>
+    <div id="output" class="centered-text"></div>
+    <script>
+        function starts(event) {
+            event.preventDefault(); 
+            let levelCount = Number(document.getElementById("stars").value); 
+            let text = "";
+            for (let i = 1; i <= levelCount; i++) { 
+                for (let j = 0; j < i; j++) {
+                    text += "*";
+                }
+                text += "\n"; 
+            }
+            text += "**\n***\n**";
+            document.getElementById("output").textContent = text; 
+        }
+    </script>
+</body>
+</html>

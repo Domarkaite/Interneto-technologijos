@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.festival.com/festival"
+           targetNamespace="http://www.festival.com/festival"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+           
+    <xs:element name="festival">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="location" type="xs:string"/>
+                <xs:element name="dates">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="start" type="xs:date"/>
+                            <xs:element name="end" type="xs:date"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="movies">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="movie" type="movieType" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="awards">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="award" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="category" type="awardCategoryType"/>
+                                        <xs:element name="winner" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        <!-- 8 -->
+        <xs:unique name="uniqueMovieID">
+            <xs:selector xpath="movies/movie"/>
+            <xs:field xpath="@id"/>
+        </xs:unique>
+        <xs:keyref name="winnerRef" refer="uniqueMovieID">
+            <xs:selector xpath="awards/award"/>
+            <xs:field xpath="winner"/>
+        </xs:keyref>
+    </xs:element>
+
+    <xs:simpleType name="awardCategoryType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Best Director"/>
+            <xs:enumeration value="Best Documentary"/>
+            <xs:enumeration value="Audience Choice"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="languageType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="English"/>
+            <xs:enumeration value="French"/>
+            <xs:enumeration value="Spanish"/>
+            <xs:enumeration value="Lithuanian"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- 2 -->
+    <xs:simpleType name="languageListType">
+        <xs:list itemType="languageType"/>
+    </xs:simpleType>
+
+    <xs:complexType name="movieType">
+            <xs:sequence>
+                <xs:element name="title" type="xs:string"/>
+                <xs:element name="director" type="directorType"/>
+                <xs:element name="duration" type="xs:int"/>
+                <xs:element name="screenings">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="screening" type="screeningType" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:string" use="required"/>
+            <xs:attribute name="language" type="languageListType" use="required"/>
+            <xs:attribute name="premiere" type="xs:boolean" use="optional"/>
+    </xs:complexType>
+
+    <!-- 3.1 -->
+    <xs:complexType name="restrictedDirectorType">
+        <xs:simpleContent>
+            <xs:restriction base="directorType">
+                <xs:attribute name="age" use="required">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int">
+                            <xs:minInclusive value="18"/>
+                            <xs:maxInclusive value="100"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+
+    <!-- 3.2 -->
+    <xs:complexType name="extendedDirectorType">
+        <xs:simpleContent>
+            <xs:extension base="directorType">
+                <xs:attribute name="experience" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="directorType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="age" type="xs:int" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- 4.1  -->
+    <xs:complexType name="restrictedScreeningType">
+        <xs:complexContent>
+            <xs:restriction base="screeningType">
+                <xs:sequence>
+                    <xs:element name="date" type="xs:date"/>
+                    <xs:element name="time" type="xs:time"/>
+                    <xs:element name="venue" type="xs:string"/>
+                    <xs:element name="price" type="priceType"/>
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- 4.2  -->
+    <xs:complexType name="extendedScreeningType">
+        <xs:complexContent>
+            <xs:extension base="screeningType">
+                <xs:sequence>
+                    <xs:element name="availableSeats" type="xs:int" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="screeningType">
+        <xs:sequence>
+            <xs:element name="date" type="xs:date"/>
+            <xs:element name="time" type="xs:time"/>
+            <xs:element name="venue" type="xs:string"/>
+            <xs:element name="price" type="priceType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+     <!-- 1 -->
+    <xs:simpleType name="priceType">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="5.00"/>
+            <xs:maxInclusive value="50.00"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- 6 -->
+    <xs:complexType name="descriptionType" mixed="true">
+        <xs:sequence>
+            <xs:element name="text" type="xs:string" minOccurs="0"/>
+            <xs:element name="highlight" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- 7 -->
+    <xs:complexType name="awardType">
+        <xs:sequence>
+            <xs:choice>
+                <xs:element name="category" type="awardCategoryType"/>
+                <xs:element name="specialMention" type="xs:string"/>
+            </xs:choice>
+            <xs:element name="winner" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
